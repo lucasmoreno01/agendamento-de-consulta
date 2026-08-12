@@ -15,6 +15,13 @@ class Appointment extends Model
     public const STATUS_COMPLETED = 'realizado';
     public const STATUS_CANCELLED = 'cancelado';
 
+    public const ALLOWED_STATUSES = [
+        self::STATUS_SCHEDULED,
+        self::STATUS_CONFIRMED,
+        self::STATUS_COMPLETED,
+        self::STATUS_CANCELLED,
+    ];
+
     protected $fillable = [
         'patient_id',
         'professional_id',
