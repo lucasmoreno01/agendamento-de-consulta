@@ -1,10 +1,3 @@
-import PlaceholderScreen from '../../screens/PlaceholderScreen';
+import HistoryScreen from '../../screens/HistoryScreen';
 
-export default function HistoryEntryScreen() {
-  return (
-    <PlaceholderScreen
-      title="Histórico"
-      description="A consulta de histórico, filtros e detalhes será implementada na próxima etapa."
-    />
-  );
-}
+export default HistoryScreen;

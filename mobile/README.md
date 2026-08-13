@@ -1,50 +1,34 @@
-# Welcome to your Expo app 👋
+# App de agendamento de consultas
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo React Native com Expo para criar, consultar e cancelar consultas do paciente de demonstracao.
 
-## Get started
+## Requisitos
 
-1. Install dependencies
+- Node.js 20.19 ou superior
+- API Laravel em execucao e banco preparado com `php artisan migrate:fresh --seed`
+
+## Como executar
+
+1. Copie `.env.example` para `.env`.
+2. Ajuste `EXPO_PUBLIC_API_URL` para a API Laravel. No Android Emulator use `http://10.0.2.2:8000/api`; em dispositivo fisico, use o IP local da maquina, por exemplo `http://192.168.0.10:8000/api`.
+3. Confirme `EXPO_PUBLIC_PATIENT_ID=1`, o paciente criado pelo seeder.
+4. Instale e execute:
 
    ```bash
    npm install
-   ```
-
-2. Start the app
-
-   ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Decisoes tecnicas
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Navegacao:** Expo Router, com rotas de Home, agendamento, historico e detalhe.
+- **HTTP:** Axios centralizado em `services/api`, um arquivo por recurso da API.
+- **Estado e formularios:** hooks nativos do React (`useState`, `useEffect` e `useCallback`); nenhum estado global e nenhuma dependencia adicional sao necessarios para este escopo.
+- **Validacao:** o aplicativo valida campos obrigatorios, formato de data/hora e data futura. O backend permanece a fonte de verdade para todas as regras de negocio.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Funcionalidades
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Fluxo de agendamento com selecao de especialidade e profissional, data, horario, revisao e confirmacao.
+- Historico do paciente demo com filtro por status e atualizacao manual.
+- Detalhe e cancelamento de consultas com status `agendado` ou `confirmado`.
+- Estados visiveis de carregamento, erro e lista vazia nas telas que consomem a API.

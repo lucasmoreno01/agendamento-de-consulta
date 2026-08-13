@@ -13,7 +13,8 @@ export default function RootLayout() {
         }}>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="appointments/index" options={{ title: 'Agendar consulta' }} />
-        <Stack.Screen name="history/index" options={{ title: 'Histórico de consultas' }} />
+        <Stack.Screen name="history/index" options={{ title: 'Historico de consultas' }} />
+        <Stack.Screen name="appointments/detail/[id]" options={{ title: 'Detalhes da consulta' }} />
       </Stack>
       <StatusBar style="dark" />
     </>
