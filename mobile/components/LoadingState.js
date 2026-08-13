@@ -3,7 +3,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 export default function LoadingState({ message = 'Carregando...' }) {
   return (
     <View style={styles.container}>
-      <ActivityIndicator color="#257b78" size="large" />
+      <ActivityIndicator color="#2563eb" size="large" />
       <Text style={styles.text}>{message}</Text>
     </View>
   );

@@ -16,7 +16,7 @@ export default function AppButton({ title, onPress, loading = false, disabled = 
         pressed && !isDisabled && styles.pressedButton,
       ]}>
       {loading ? (
-        <ActivityIndicator color={variant === 'secondary' ? '#257b78' : '#ffffff'} />
+        <ActivityIndicator color={variant === 'secondary' ? '#2563eb' : '#ffffff'} />
       ) : (
         <Text style={[styles.text, variant === 'secondary' && styles.secondaryText]}>{title}</Text>
       )}
@@ -27,7 +27,7 @@ export default function AppButton({ title, onPress, loading = false, disabled = 
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: '#257b78',
+    backgroundColor: '#2563eb',
     borderRadius: 12,
     justifyContent: 'center',
     minHeight: 52,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   secondaryButton: {
     backgroundColor: '#ffffff',
-    borderColor: '#257b78',
+    borderColor: '#2563eb',
     borderWidth: 1,
   },
   dangerButton: {
@@ -54,6 +54,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   secondaryText: {
-    color: '#257b78',
+    color: '#2563eb',
   },
 });

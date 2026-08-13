@@ -7,22 +7,19 @@ export default function HomeScreen() {
   return (
     <ScreenContainer>
       <View style={styles.header}>
-        <Text style={styles.eyebrow}>CUIDADO EM SAÚDE</Text>
-        <Text style={styles.title}>Olá! Como podemos ajudar?</Text>
+        <Text style={styles.title}>Agende sua consulta!</Text>
         <Text style={styles.description}>
-          Agende uma consulta ou acompanhe seus atendimentos em um só lugar.
+          Agende uma consulta ou acompanhe seus atendimentos pelo App!
         </Text>
       </View>
 
       <View style={styles.actions}>
         <ActionCard
-          icon="+"
           title="Agendar consulta"
           description="Escolha especialidade, profissional, data e horário."
           href="/appointments"
         />
         <ActionCard
-          icon="≡"
           title="Meu histórico"
           description="Consulte seus agendamentos e atendimentos anteriores."
           href="/history"
@@ -37,12 +34,7 @@ const styles = StyleSheet.create({
     gap: 12,
     marginBottom: 32,
   },
-  eyebrow: {
-    color: '#257b78',
-    fontSize: 12,
-    fontWeight: '700',
-    letterSpacing: 1.2,
-  },
+ 
   title: {
     color: '#12345b',
     fontSize: 30,

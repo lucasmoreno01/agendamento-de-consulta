@@ -91,8 +91,8 @@ function DetailLine({ label, value }) {
 
 const styles = StyleSheet.create({
   content: { gap: 18 },
-  statusBox: { backgroundColor: '#dff3f1', borderRadius: 14, gap: 4, padding: 18 },
-  statusLabel: { color: '#257b78', fontSize: 12, fontWeight: '700', letterSpacing: 1 },
+  statusBox: { backgroundColor: '#e8f0ff', borderRadius: 14, gap: 4, padding: 18 },
+  statusLabel: { color: '#2563eb', fontSize: 12, fontWeight: '700', letterSpacing: 1 },
   status: { color: '#12345b', fontSize: 22, fontWeight: '700' },
   card: { backgroundColor: '#ffffff', borderColor: '#e0e6ee', borderRadius: 14, borderWidth: 1, gap: 18, padding: 18 },
   line: { gap: 4 },
